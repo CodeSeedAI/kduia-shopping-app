@@ -35,7 +35,7 @@ const ItemSelected = (props) => {
 
             <div className="input-group mb-3" style={{ marginLeft: '2rem' }}>
                     <div className="input-group-prepend">
-                <label className="input-group-text" htmlFor="inputGroupSelect01">Items</label>
+                <label className="input-group-text" htmlFor="inputGroupSelect01">Department</label>
                 </div>
                   <select className="custom-select" id="inputGroupSelect01" onChange={(event) => setName(event.target.value)}>
                         <option defaultValue>Choose...</option>
@@ -47,7 +47,7 @@ const ItemSelected = (props) => {
                   </select>
 
                     <div className="input-group-prepend" style={{ marginLeft: '2rem' }}>
-                <label className="input-group-text" htmlFor="inputGroupSelect02">Quantity</label>
+                <label className="input-group-text" htmlFor="inputGroupSelect02">Allocation</label>
                 </div>
                   <select className="custom-select" id="inputGroupSelect02" onChange={(event) => setAction(event.target.value)}>
                   <option defaultValue value="Add" name="Add">Add</option>
