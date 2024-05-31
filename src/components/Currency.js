@@ -1,12 +1,12 @@
 import React, { useContext } from 'react';
 import { AppContext } from '../context/AppContext';
 
-const Location = () => {
-  const {dispatch } = useContext(AppContext);
+const Currency = () => {
+    const {dispatch } = useContext(AppContext);
 
-    const changeLocation = (val)=>{
+    const changeCurrency = (val)=>{
             dispatch({
-                type: 'CHG_LOCATION',
+                type: 'CHG_CURRENCY',
                 payload: val,
             })
     }
@@ -14,7 +14,7 @@ const Location = () => {
 
   return (
         <div className='alert alert-secondary'> Currency {
-      <select name="Location" id="Location" onChange={event=>changeLocation(event.target.value)}>
+      <select name="currency" id="currency" onChange={event=>changeCurrency(event.target.value)}>
         <option value="£">UK(£)</option>
         <option value="₹">India(₹)</option>
         <option value="€">Europe(€)</option>
@@ -25,4 +25,4 @@ const Location = () => {
     );
 };
 
-export default Location;
+export default Currency;

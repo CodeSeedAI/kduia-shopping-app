@@ -3,13 +3,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 import { AppProvider } from './context/AppContext';
-import CartValue from './components/CartValue';
 import ExpenseList from './components/ExpenseList';
 import ItemSelected from './components/ItemSelected';
-import Location from './components/Location';
 import Budget from './components/Budget';
 import Remaining from './components/Remaining';
 import Spent from './components/Spent';
+import Currency from './components/Currency';
 
 const App = () => {
     return (
@@ -27,7 +26,7 @@ const App = () => {
                         <Spent />
                     </div>
                     <div className='col-sm'>
-                        <Location />
+                        <Currency />
                 </div>
                 </div>
                 <h3 className='mt-3'>Allocation</h3>

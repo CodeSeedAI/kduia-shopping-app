@@ -2,18 +2,23 @@ import React, { useContext, useState } from 'react';
 import { AppContext } from '../context/AppContext';
 
 const ItemSelected = (props) => {
-    const { dispatch} = useContext(AppContext);
+    const { dispatch, budgetLeft, currency} = useContext(AppContext);
 
     const [name, setName] = useState('');
-    const [quantity, setQuantity] = useState('');
+    const [itemBudget, setItemBudget] = useState('');
     const [action, setAction] = useState('');
     
 
     const submitEvent = () => {
+        if(action === "Add" && parseInt(itemBudget) > budgetLeft){
+            alert(`This value can not exceed remaining funds ${budgetLeft}`)
+
+            return false;
+        }
 
         const item = {
             name: name,
-            quantity: parseInt(quantity),
+            budget: parseInt(itemBudget),
         };
 
         if(action === "Reduce") {
@@ -54,15 +59,17 @@ const ItemSelected = (props) => {
                 <option value="Reduce" name="Reduce">Reduce</option>
                   </select>  
                   <span className="eco" style={{ marginLeft: '2rem', marginRight: '8px'}}></span>
-
+                    {currency}
                     <input
                         required='required'
                         type='number'
                         id='cost'
-                        value={quantity}
+                        value={itemBudget}
                         style={{size: 10}}
-                        onChange={(event) => setQuantity(event.target.value)}>
-                        </input>
+                        onChange={
+                            (event) => setItemBudget(event.target.value)
+                        }>
+                    </input>
 
                     <button className="btn btn-primary" onClick={submitEvent} style={{ marginLeft: '2rem' }}>
                         Save
