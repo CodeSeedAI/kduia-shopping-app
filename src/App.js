@@ -7,19 +7,24 @@ import CartValue from './components/CartValue';
 import ExpenseList from './components/ExpenseList';
 import ItemSelected from './components/ItemSelected';
 import Location from './components/Location';
+import Budget from './components/Budget';
+import Remaining from './components/Remaining';
 
 const App = () => {
     return (
         <AppProvider>
             <div className='container'>
-                <h1 className='mt-3'>Shopping App</h1>
+                <h1 className='mt-3'>Company's Budget Allocation</h1>
                 <div className='row mt-3'> 
                     <div className='col-sm'>
-                        <CartValue />
+                        <Budget />
+                    </div>
+                    <div className='col-sm'>
+                        <Remaining />
                     </div>
                     <div className='col-sm'>
                         <Location />
-                    </div>
+                </div>
                 </div>
                 <h3 className='mt-3'>Shopping Cart</h3>
                 <div className='row '>

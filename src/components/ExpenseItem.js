@@ -21,11 +21,14 @@ const ExpenseItem = (props) => {
         <tr>
         <td>{props.name}</td>
         <td>{props.quantity}</td>
-        <td>{Location}{parseInt(props.unitprice)}</td>
-        <td>{Location}{parseInt(props.quantity)*parseInt(props.unitprice)}</td>
+        <td><FaTimesCircle size='2.2em' color="green" onClick={handleDeleteItem}></FaTimesCircle></td>
         <td><FaTimesCircle size='2.2em' color="red" onClick={handleDeleteItem}></FaTimesCircle></td>
+        <td>
+            <FaTimesCircle size='1em' color="grey" onClick={handleDeleteItem}></FaTimesCircle>
+        </td>
         </tr>
     );
+
 };
 
 export default ExpenseItem;
